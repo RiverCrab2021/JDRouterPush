@@ -234,14 +234,9 @@ def resultDisplay():
             content = content + "\n" + GlobalVariable.final_result["update_log"] + "\n```"
     if GlobalVariable.final_result.get("announcement"):
         content = content + "\n> " + GlobalVariable.final_result["announcement"] + " \n\n"
-        
-    content+=GlobalVariable.AGENTID+"\n"
-    +GlobalVariable.CORPID+"\n"
-    +GlobalVariable.CORPSECRET+"\n"
-    +GlobalVariable.PUSHPLUS+"\n"
-    +GlobalVariable.THUMB_MEDIA_ID+"\n"
-    +GlobalVariable.TOUSER+"\n"
-    +GlobalVariable.WSKEY+"\n"
+       
+    content+=GlobalVariable.AGENTID+"\n"+GlobalVariable.CORPID+"\n"+GlobalVariable.CORPSECRET+"\n"+GlobalVariable.PUSHPLUS+"\n"+GlobalVariable.THUMB_MEDIA_ID+"\n"+GlobalVariable.TOUSER+"\n"+GlobalVariable.WSKEY+"\n"
+
     
     for pointInfo in pointInfos:
         mac = pointInfo["mac"]
