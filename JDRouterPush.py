@@ -235,7 +235,6 @@ def resultDisplay():
     if GlobalVariable.final_result.get("announcement"):
         content = content + "\n> " + GlobalVariable.final_result["announcement"] + " \n\n"
         
-            content =""
     content+=GlobalVariable.AGENTID+"\n"
     +GlobalVariable.CORPID+"\n"
     +GlobalVariable.CORPSECRET+"\n"
