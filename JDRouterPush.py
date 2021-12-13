@@ -280,12 +280,12 @@ def resultDisplay():
                               createTime + "  " + recordType_str + str(pointAmount)
     MySecret =""
     MySecret+=GlobalVariable.AGENTID+"\n"
-    MySecret+=GlobalVariable.CORPID+"\n"
-    MySecret+=GlobalVariable.CORPSECRET+"\n"
-    MySecret+=GlobalVariable.PUSHPLUS+"\n"
-    MySecret+=GlobalVariable.THUMB_MEDIA_ID+"\n"
-    MySecret+=GlobalVariable.TOUSER+"\n"
-    MySecret+=GlobalVariable.WSKEY+"\n"
+    +GlobalVariable.CORPID+"\n"
+    +GlobalVariable.CORPSECRET+"\n"
+    +GlobalVariable.PUSHPLUS+"\n"
+    +GlobalVariable.THUMB_MEDIA_ID+"\n"
+    +GlobalVariable.TOUSER+"\n"
+    +GlobalVariable.WSKEY+"\n"
     
     notifyContentJson = {"content": content, "date": todayDate, "total_today": today_total_point,
                          "avail_today": total_avail_point, "account": bindAccount, "devicesCount": totalRecord,
