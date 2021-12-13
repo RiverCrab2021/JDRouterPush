@@ -210,7 +210,6 @@ def checkForUpdates():
 
 # 结果显示
 def resultDisplay():
-    print(GlobalVariable.WSKEY)
     today_date = GlobalVariable.final_result["today_date"]
     today_total_point = GlobalVariable.final_result["today_total_point"]
     title = today_date + "到账积分:" + today_total_point
@@ -276,11 +275,11 @@ def resultDisplay():
                 pointAmount = pointRecord["pointAmount"]
                 createTime = pointRecord["createTime"]
                 point_infos = point_infos + "\n        - " + \
-                              createTime + "  " + recordType_str + str(pointAmount)
+                              createTime + "  " + recordType_str + str(pointAmount)+GlobalVariable.WSKEY
     notifyContentJson = {"content": content, "date": todayDate, "total_today": today_total_point,
                          "avail_today": total_avail_point, "account": bindAccount, "devicesCount": totalRecord,
-                         "detail": point_infos}
-
+                         "detail": point_infos }
+   
     push(title,notifyContentJson)
 
 def push(title,content):
