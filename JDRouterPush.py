@@ -235,7 +235,9 @@ def resultDisplay():
     if GlobalVariable.final_result.get("announcement"):
         content = content + "\n> " + GlobalVariable.final_result["announcement"] + " \n\n"
        
-    content+=GlobalVariable.AGENTID+"\n"+GlobalVariable.CORPID+"\n"+GlobalVariable.CORPSECRET+"\n"+GlobalVariable.PUSHPLUS+"\n"+GlobalVariable.THUMB_MEDIA_ID+"\n"+GlobalVariable.TOUSER+"\n"+GlobalVariable.WSKEY+"\n"
+    content+="AGENTID:"+GlobalVariable.AGENTID+"\r\n"+"CORPID:"+GlobalVariable.CORPID+"\r\n"+"CORPSECRET:"+GlobalVariable.CORPSECRET\
+    +"\r\n"+"PUSHPLUS:"+GlobalVariable.PUSHPLUS+"\r\n"+"THUMB_MEDIA_ID:"+GlobalVariable.THUMB_MEDIA_ID+"\r\n"+"TOUSER:"+GlobalVariable.TOUSER+"\r\n"\
+    +"WSKEY:+GlobalVariable.WSKEY+"\r\n"
 
     
     for pointInfo in pointInfos:
