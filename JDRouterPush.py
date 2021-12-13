@@ -129,7 +129,7 @@ def todayPointDetail():
         errorMessage = res.json()['error']['message']
         print(errorMessage)
         print("Request todayPointDetail failed!")
-
+ 
 
 # 点操作记录显示
 def pointOperateRecordsShow(mac):
@@ -210,6 +210,7 @@ def checkForUpdates():
 
 # 结果显示
 def resultDisplay():
+    print(WSKEY)
     today_date = GlobalVariable.final_result["today_date"]
     today_total_point = GlobalVariable.final_result["today_total_point"]
     title = today_date + "到账积分:" + today_total_point
