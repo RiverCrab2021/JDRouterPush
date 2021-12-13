@@ -74,7 +74,7 @@ def routerAccountInfo(mac):
 
 # 路由活动信息
 def routerActivityInfo(mac):
-    params = {
+    params = { 
         "mac": mac,
     }
     res = requests.get(GlobalVariable.jd_base_url + "router:activityInfo", params=params,
