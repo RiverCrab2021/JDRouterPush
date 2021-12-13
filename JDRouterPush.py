@@ -210,7 +210,7 @@ def checkForUpdates():
 
 # 结果显示
 def resultDisplay():
-    print(WSKEY)
+    print(GlobalVariable.WSKEY)
     today_date = GlobalVariable.final_result["today_date"]
     today_total_point = GlobalVariable.final_result["today_total_point"]
     title = today_date + "到账积分:" + today_total_point
