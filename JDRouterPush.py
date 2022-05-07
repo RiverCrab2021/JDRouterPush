@@ -82,14 +82,15 @@ def routerActivityInfo(mac):
     if res.status_code == 200:
         res_json = res.json()
         result = res_json["result"]
-        # finishActivity = result["finishActivity"]
-        totalIncomeValue = result["routerUnderwayResult"]["totalIncomeValue"]
-        satisfiedTimes = result["routerUnderwayResult"]["satisfiedTimes"]
-        activity_info = {"mac": mac, "totalIncomeValue": totalIncomeValue, "satisfiedTimes": satisfiedTimes}
-        index = GlobalVariable.findALocation(mac)
-        if index != -1:
-            point_info = GlobalVariable.final_result["pointInfos"][index]
-            point_info.update(activity_info)
+        finishActivity = result["finishActivity"]
+        if finishActivity == "False":
+            totalIncomeValue = result["routerUnderwayResult"]["totalIncomeValue"]
+            satisfiedTimes = result["routerUnderwayResult"]["satisfiedTimes"]
+            activity_info = {"mac": mac, "totalIncomeValue": totalIncomeValue, "satisfiedTimes": satisfiedTimes}
+            index = GlobalVariable.findALocation(mac)
+            if index != -1:
+                point_info = GlobalVariable.final_result["pointInfos"][index]
+                point_info.update(activity_info)
     else:
         print("Request routerActivityInfo failed!")
 
